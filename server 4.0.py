@@ -47,9 +47,10 @@ def enter_chat(client, address):
         #saludar y preguntar al cliente por su saldo
         client.send(bytes('Welcome %s! What is your balance?' % name, 'UTF-8'))
         
-        saldo = ask_saldo(client) # Preguntar y recibir el balance del usuario
+        saldo = ask_saldo(client) # revisar la valides del balance
 
         BALANCES[client] = saldo # agregar saldo a la lista de blanaces
+        # avisar al cliente que su balance ha sido aceptado
         client.send(bytes('The balance of %s has been set to your account' % saldo, 'UTF-8'))
         
         # avisar al cliente que entro al chat (se puede comunicar con los demas)
